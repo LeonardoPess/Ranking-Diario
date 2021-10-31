@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/dist/styles.css">
+
+  <title>Ranking Diário</title>
+</head>
+<body>
+
+  <section class="rank">
+    <div class="card">
+
+      <span data-dynamically="updatedAtBox"></span>
+
+      <div class="title-box">
+        <h1 class="title">Ranking Diário</h1>
+      </div>
+
+      <div class="crown">
+        <img src="./assets/crown.png" alt="Crown">
+      </div>
+
+      <ul data-dynamically="playersListBox"></ul>
+
+    </div>
+  </section>
+
+<script>
+  function updateRankingInfos() {
+    fetch('./rank.json')
+    .then((response) => response.json())
+    .then((data) => {
+      const updatedAtBox = document.querySelector('[data-dynamically="updatedAtBox"]');
+      const playersListBox = document.querySelector('[data-dynamically="playersListBox"]');
+
+      const listPlayersByHighest = [...data.players].sort((a, b) => b.score - a.score);
+      playersListBox.innerHTML = '';
+
+      listPlayersByHighest.forEach((player, index) => {
+        playersListBox.innerHTML += `
+        <li>
+          <p>${index + 1}# ${player.name} :</p>
+          <span>${player.score} <img src="./assets/poison.png" alt="Poison"></span>
+        </li>
+        `;
+      });
+
+      updatedAtBox.innerHTML = data.updatedAt;
+    });
+  }
+  updateRankingInfos();
+
+  setInterval(function(){
+    updateRankingInfos();
+  }, 5000);
+</script>
+</body>
+</html>

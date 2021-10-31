@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+:root {
+  --white: #FFFFFF;
+  --purple-900: #11041D;
+  --purple-700: #3b2553;
+  --pink-200: #BD3ACD;
+  --pink-500: #A041FE;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
+body {
+  color: var(--white);
+}
+
+body, input, textarea, select, button {
+  font: 400 1rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  min-width: 400px;
+  padding: 2rem 1rem;
+  position: relative;
+  background-color: var(--purple-900);
+  border-radius: 2rem;
+  box-shadow: 0px 0px 35px 9px rgba(0, 0, 0, 0.5);
+}
+.card > span {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--white);
+}
+.card .title {
+  text-align: center;
+}
+.card .crown {
+  width: 50px;
+  margin-left: 2rem;
+}
+.card ul li {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+.card ul li + li {
+  margin-top: 1rem;
+}
+.card ul li span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card ul li span img {
+  width: 30px;
+  margin-left: 0.6rem;
+}
+
+@media (max-width: 460px) {
+  .card {
+    min-width: initial;
+    width: 100%;
+  }
+}
+.title-box {
+  padding: 1rem;
+}
+.title-box .title {
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+.rank {
+  min-height: 100%;
+  padding: 0.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pink-200);
+}
+
+.rankTotal {
+  min-height: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--purple-900);
+}
+.rankTotal .title-box {
+  padding: 2rem;
+  text-align: center;
+}
+.rankTotal .rankTotalBox {
+  display: flex;
+}
+.rankTotal .rankTotalBox div:nth-child(1) {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.rankTotal .rankTotalBox div:nth-child(1) span:nth-child(1) {
+  font-size: 0.8rem;
+}
+.rankTotal .rankTotalBox div:nth-child(1) span:nth-child(2) {
+  font-size: 4.2rem;
+}
+.rankTotal .rankTotalBox div:nth-child(2) {
+  max-width: 100px;
+}

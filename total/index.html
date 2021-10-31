@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../css/dist/styles.css">
+
+  <title>Total Diário</title>
+</head>
+<body>
+
+  <section class="rankTotal">
+    <div>
+      <div class="title-box">
+        <h1 class="title">Total Diário</h1>
+      </div>
+
+      <div class="rankTotalBox">
+        <div>
+          <span data-dynamically="updatedAtBox">00-00-0000 / 00:00:00</span>
+          <span data-dynamically="totalBox">0</span>
+        </div>
+        <div>
+          <img src="../assets/poison.png" alt="Poison">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<script>
+  function updateTotalRankingInfos() {
+    fetch('../rank.json')
+    .then((response) => response.json())
+    .then((data) => {
+      const updatedAtBox = document.querySelector('[data-dynamically="updatedAtBox"]');
+      const totalBox = document.querySelector('[data-dynamically="totalBox"]');
+
+      const allScores = [];
+
+      data.players.forEach((player) => {
+        allScores.push(Number(player.score));
+      });
+
+      totalScore = allScores.reduce((a, b) => a + b, 0);
+
+      totalBox.innerHTML = totalScore;
+      updatedAtBox.innerHTML = data.updatedAt;
+    });
+  }
+  updateTotalRankingInfos();
+
+  setInterval(function(){
+    updateTotalRankingInfos();
+  }, 5000);
+</script>
+</body>
+</html>
