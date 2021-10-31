@@ -31,3 +31,4 @@
 
 ## Demo
 https://leonardopess.github.io/Ranking-Diario/
+https://leonardopess.github.io/Ranking-Diario/total
