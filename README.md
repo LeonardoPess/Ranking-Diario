@@ -4,7 +4,7 @@
   </a>
 </h1>
 
-<p align="center"><b>Ranking Diário</b> foi desenvolvido com HTML, CSS E JAVASCRIPT, fazendo a listagem dos jogadores com mais ponto para os que tem menos e mostrando a data da atualização e na página total ele junta os pontos de todos jogadores e soma para ser monstado o total em tela junto com a data de atualização! Todas informações vindas de uma API (neste projeto eu alterei para um json estático)</p>
+<p align="center"><b>Ranking Diário</b> foi desenvolvido com HTML, CSS E JAVASCRIPT, fazendo a listagem dos jogadores com mais ponto para os que tem menos e mostrando a data da atualização e na página total ele junta os pontos de todos jogadores e soma para ser monstado o total em tela junto com a data de atualização! Todas informações vindas de uma API (neste projeto eu alterei para um json estático).</p>
 
 <p align="center">
    <a href="https://www.linkedin.com/in/leonardo-pessoa-5733121b5/">
